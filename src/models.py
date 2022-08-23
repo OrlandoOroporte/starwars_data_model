@@ -38,16 +38,12 @@ class People(Base):
 
 
 class Favorites(Base):
-    __tablename__:"favorites"
-    id:Column(Integer, primary_key=True)
+    __tablename__="favorites"
+    id = Column(Integer, primary_key=True)
     user_id = Column(Integer,ForeignKey("user.id"))
-    people_id = Column(Integer,ForeignKey("People.id"))
+    people_id = Column(Integer,ForeignKey("people.id"))
     planet_id = Column(Integer,ForeignKey("planet.id"))
     user = relationship(User)
-
-
-
-
 
 
 # class Person(Base):

@@ -23,8 +23,7 @@ class Planet(Base):
     size = Column(String(250),nullable=False)
     population = Column(String(250),nullable=False)
     surface = Column(String(250),nullable=False)
-    user_id = Column(Integer,ForeignKey("user.id"))
-    user = relationship(User)
+    
 
 class People(Base):
     __tablename__="people"
@@ -33,9 +32,6 @@ class People(Base):
     color_eyes = Column(String(250),nullable=False)
     color_hair = Column(String(250),nullable=False)
     height = Column(String(250),nullable=False)
-    user_id = Column(Integer,ForeignKey("user.id"))
-    user = relationship(User)
-
 
 class Favorites(Base):
     __tablename__="favorites"

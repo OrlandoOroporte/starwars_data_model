@@ -36,7 +36,7 @@ class People(Base):
 class Favorites(Base):
     __tablename__="favorites"
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer,ForeignKey("user.id"))
+    user_id = Column(Integer,ForeignKey("user.id"), nullable=False)
     people_id = Column(Integer,ForeignKey("people.id"))
     planet_id = Column(Integer,ForeignKey("planet.id"))
     user = relationship(User)

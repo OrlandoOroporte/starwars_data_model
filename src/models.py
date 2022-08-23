@@ -34,8 +34,17 @@ class People(Base):
     color_hair = Column(String(250),nullable=False)
     height = Column(String(250),nullable=False)
     user_id = Column(Integer,ForeignKey("user.id"))
-    user_id = Column(Integer,ForeignKey("user.id"))
     user = relationship(User)
+
+
+class Favorites(Base):
+    __tablename__:"favorites"
+    id:Column(Integer, primary_key=True)
+    user_id = Column(Integer,ForeignKey("user.id"))
+    people_id = Column(Integer,ForeignKey("People.id"))
+    planet_id = Column(Integer,ForeignKey("planet.id"))
+    user = relationship(User)
+
 
 
 
